@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>PollingPage</title>
+</head>
+<body>
+    
+        <div class="navbar navbar-epand-lg ">
+           <a class="navbar-brand" href="">PollingPage</a>
+        </div>
+        
+        
+    <form action="https://sheetdb.io/api/v1/qqxr3pulm5mv1" method="post" id="sheetdb-form">
+        
+           <div class="card">
+            <div class="card-header">
+                Enter your information:
+            </div>
+            <div class="card-body">
+                <input id="YourName" type="textarea" name="data[yourName]" placeholder="Enter Your Name:">
+                <input id="Profession" type="textarea" name="data[Profession]" placeholder="Enter Your Profession(teacher/student/etc):">
+            </div>
+           </div>
+           <div class="card">
+            
+           </div>
+           <div class="card-body">
+            <input type="text" id="id_Num" name="data[Sentense No]" placeholder="Enter sentense number:" required> 
+        </div>
+           <div class="card">
+            
+            
+            
+                <div class="card-header">
+                    
+                    Standard Sentense:
+                </div>
+                <div  class="card-body">
+                    <strong id="StanD">
+                        <!-- stadard sentense -->
+                    </strong>
+                </div>
+           </div>
+            <div class="card">
+                <div class="card-header">
+                    Paraphrased Sentense:
+                </div>
+                <div  class="card-body">
+                    <strong id="Para">
+                    <!-- Paraphrased sentense -->
+                        </strong>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Correctness Check:
+                </div>
+                <div  class="card-body">
+                    <fieldset>
+                        <legend>is it correct?</legend>
+                            <div>
+                                <input type="radio" id="Choice1"
+                                name="data[is it correct?]" value="Yes">
+                                <label for="contactChoice1">Yes</label>
+                        
+                                <input type="radio" id="Choice2"
+                                name="data[is it correct?]" value="NO">
+                                <label for="contactChoice2">No</label>
+                            </div>
+                    </fieldset>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Enter Correct Paraphrased Sentense According To You!
+                    </div>
+                    <div  class="card-body">
+                        <input id="YourAnswer" type="textarea" name="data[yourAnswer]" placeholder="Enter Your Answer:">
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div>
+                <button href="page2.html" class="btn btn-primary"  type="submit">Submit</button>
+              </div>
+            </form>
+            
+           
+            
+            <script>
+                function storeData(){
+    var form = document.getElementById('sheetdb-form');
+                
+            form.addEventListener("submit", e => {
+              e.preventDefault();
+              fetch(form.action, {
+                  method : "POST",
+                  body: new FormData(document.getElementById("sheetdb-form")),
+              }).then(
+                  response => response.json()
+              ).then((html) => {
+                document.write("sucessfully submitted the form ")
+                //window.open('page2.html', '_blank');
+              });
+            });
+}
+            </script>
+            <script src="script.js"></script>    
+</body>
+<div style="justify-content:centre ;">
+    <footer style="padding:30px 0 0 45%;">
+        made with ❤️ by Us.
+    </footer>
+</div>
+
+</html>
