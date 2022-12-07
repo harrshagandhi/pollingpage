@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jsapi.js"></script>
     <link rel="stylesheet" href= "bootstrap.css">
     <link rel="stylesheet" href="style.css">
 
     <title>PollingPage</title>
+    
+    <script type="text/javascript">
+
+google.load("elements","1",{
+packages:"transliteration"
+});
+
+function onLoad(){
+    var options={
+        sourceLanguage:google.elements.transliteration.LanguageCode.ENGLISH,
+        destinationLanguage:[google.elements.transliteration.LanguageCode.HINDI],
+        shortcutKey:'ctrl+q',
+        transliterationEnabled:true
+    };
+
+    var control = new google.elements.transliteration.TransliterationControl(options);
+    control.makeTransliteratable(['YourAnswer']);
+}
+
+google.setOnLoadCallback(onLoad);
+    </script>
+    
 </head>
 <body>
     
