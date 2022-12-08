@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="jsapi.js"></script>
     <link rel="stylesheet" href= "bootstrap.css">
+
     <link rel="stylesheet" href="style.css">
 
     <title>PollingPage</title>
-    
+
     <script type="text/javascript">
 
 google.load("elements","1",{
@@ -38,7 +39,9 @@ google.setOnLoadCallback(onLoad);
            <a class="navbar-brand" href="">PollingPage</a>
         </div>
         
-<div class="Body-content">
+    <div class="Body-content">
+
+   
     <form action="https://sheetdb.io/api/v1/qqxr3pulm5mv1" method="post" id="sheetdb-form">
         
            <div class="card">
@@ -53,13 +56,12 @@ google.setOnLoadCallback(onLoad);
            <div class="card">
             
            </div>
-           <div class="card-body">
-               
-               <input type="text" id="id_Num" name="data[Sentense No]" placeholder="Enter sentense number:" style="visibility: hidden;" required> 
+           <!-- <div class="card-body"> -->
+            <input type="text" id="id_Num" name="data[Sentense No]" placeholder="Enter sentense number:" style="visibility: hidden;" required> 
             <div style="background-color: #282A3A;">
                 <a class="btn btn-success" id="id_num">press me to get started</a>
-               
-        </div>
+            </div>
+        <!-- </div> -->
            <div class="card">
             
             
@@ -122,8 +124,8 @@ google.setOnLoadCallback(onLoad);
            
             
             <script>
-                function storeData(){
-    var form = document.getElementById('sheetdb-form');
+function storeData(){
+var form = document.getElementById('sheetdb-form');
                 
             form.addEventListener("submit", e => {
               e.preventDefault();
@@ -139,8 +141,9 @@ google.setOnLoadCallback(onLoad);
             });
 }
             </script>
+            <script src="script.js"></script> 
+            
         </div> 
-            <script src="script.js"></script>    
 </body>
 <div class="footer" style="justify-content:centre ; background-color: #577BC1; margin-top: 10%; ">
     <footer style="padding:30px 0 0 45%;">
@@ -149,3 +152,4 @@ google.setOnLoadCallback(onLoad);
 </div>
 
 </html>
+
