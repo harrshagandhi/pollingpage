@@ -1,4 +1,4 @@
-
+const Sentence_number=Math.floor(Math.random() *983);
 async function getData(){
     
     response=await fetch('test.csv');
@@ -6,7 +6,7 @@ async function getData(){
     //console.log(data);
     
 
-    const rows =data.split('\n').slice(0,document.querySelectorAll("input")[2].value);
+    const rows =data.split('\n').slice(0,Sentence_number);
     rows.forEach(elt =>{
         const row=elt.split(',');
         
@@ -21,7 +21,7 @@ async function getData2(){
     //console.log(data);
     
 
-    const rows =data.split('\n').slice(0,document.querySelectorAll("input")[2].value);
+    const rows =data.split('\n').slice(0,Sentence_number);
     rows.forEach(elt =>{
         const row=elt.split(',');
         
@@ -30,5 +30,13 @@ async function getData2(){
     })
 }
 
-document.querySelectorAll("input")[2].addEventListener('input',getData);
-document.querySelectorAll("input")[2].addEventListener('input',getData2);
+// document.querySelectorAll("input")[2].addEventListener('input',getData);
+// document.querySelectorAll("input")[2].addEventListener('input',getData2);
+
+document.getElementById("id_num").addEventListener("click", getData)
+document.getElementById("id_num").addEventListener("click", getData2)
+document.getElementById("id_num").addEventListener("click",function(){
+    document.getElementById("id_Num").value=Sentence_number;
+})
+
+
